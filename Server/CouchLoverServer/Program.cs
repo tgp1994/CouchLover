@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace CouchLoverServer
 {
-    static class Program
+	static class Program
     {
-        /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
+			Server server = new Server();
+			server.Start(666);
+
+			Console.WriteLine("Server is now listening!");
+			Console.WriteLine("Press any key to exit.");
+			Console.ReadKey();
+		}
     }
 }
